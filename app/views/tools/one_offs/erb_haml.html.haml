@@ -1,0 +1,14 @@
+- form_remote_tag :url => {:controller => 'one_offs', :action => 'convert_erb_haml'}, :html => {:id => 'convert_form'} do
+  = text_area_tag :html_input, '', :style => 'height: 500px; width: 400px; float: left;'
+  = link_to_function 'CONVERT', 'convert()', :style => 'margin-left: 10px; float: left;'
+  = text_area_tag :blah, '', :style => 'height: 500px; width: 400px; margin-left: 20px; float: left;', :class => 'haml_output'
+
+:javascript
+  function convert() {
+    console.log('hi');
+    $('convert_form').onsubmit();
+  }
+
+  function update_with(text) {
+    $$('#convert_form .haml_output').first().update(text);
+  }

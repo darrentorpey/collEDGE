@@ -1,0 +1,50 @@
+!light_black = #222
+!soft_black  = #444
+!softer_black  = #666
+
+!light_field_label = #555
+!box_bg_gray = #E6E6E6
+!input_outline = !box_bg_gray - #222
+!light_blue_link_1 = #769BB5
+!soft_gray_underline = 1px "solid" !soft_black + #666
+
+=square_form(!label_width = 110px, !input_width = 200px)
+  fieldset
+    :margin-top 10px
+    p
+      :line-height 20px
+    li
+      :padding 7px 0px
+      +clearfix
+      &.inline
+        :float left
+        label
+          :width auto
+    label
+      :float left
+      :width= !label_width
+      :display block
+      :color= !light_field_label
+      :font-size 14px
+      :text-align right
+      :margin-right 12px
+    input, textarea
+      !input_padding = 4px
+      :height 21px
+      :line-height 12px
+      :padding= 2px !input_padding
+      :float left
+      :color #333
+      :border= 1px solid !input_outline
+      :width= !input_width
+    
+    li.check_boxes fieldset ol li label
+      :text-align left
+      input
+        :width 20px
+    textarea
+      :height 120px
+      :font 10pt "Arial"
+  .commit
+    input
+      :height 32px

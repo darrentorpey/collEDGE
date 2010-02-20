@@ -1,0 +1,32 @@
+<% title "Person" %>
+
+<p>
+  <strong>First Name:</strong>
+  <%=h @person.first_name %>
+</p>
+<p>
+  <strong>Middle Name:</strong>
+  <%=h @person.middle_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%=h @person.last_name %>
+</p>
+<p>
+  <strong>Nick Name:</strong>
+  <%=h @person.nick_name %>
+</p>
+<p>
+  <strong>Gender:</strong>
+  <%=h @person.gender %>
+</p>
+<p>
+  <strong>Birth Date:</strong>
+  <%=h @person.birth_date %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_person_path(@person) %> |
+  <%= link_to "Destroy", @person, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", people_path %>
+</p>

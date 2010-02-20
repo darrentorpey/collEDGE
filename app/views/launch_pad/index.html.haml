@@ -1,0 +1,23 @@
+- content_for :left_sidebar do
+  .head
+    Sidebar
+  .body
+    %ul.admin
+      %li= link_to 'Events', admin_events_path
+      %li Players
+    %hr
+    %ul
+      %li Week
+      %li Year
+      %li Blue
+
+- page_title! "Launch Pad"
+
+%ol#top_nav_menu
+  %li One
+  %li Two
+
+%div.basic_info_box{:style => 'width: 460px'}
+  %h3 Events
+  .lower
+    %p The body

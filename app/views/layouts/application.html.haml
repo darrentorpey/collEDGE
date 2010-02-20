@@ -1,0 +1,26 @@
+!!!
+%html{html_attrs}
+  %head
+    %meta{'http-equiv' => "Content-type", :content => "text/html; charset=utf-8"}
+    %title= page_title
+    = stylesheet_link_tag 'reset', :media => 'screen'
+    = stylesheet_link_tag 'base', :media => 'screen'
+    = stylesheet_link_tag 'core_layout', :media => 'screen'
+    = stylesheet_link_tag 'plain', :media => 'screen'
+    / = stylesheet_link_tag 'formtastic'
+    / = stylesheet_link_tag 'formtastic_changes'`
+  %body{:class => body_class}
+    %div.container
+      .top
+        .title_box
+          =image_tag 'logos/first_logo.png'
+        .welcome_box
+          Welcome to CollEDGE!
+      .outer_box
+        - if @content_for_left_sidebar.present?
+          %div.left_sidebar
+            = yield :left_sidebar
+        %div{:class => 'main'}
+          = render :partial => 'shared/flashes'
+          = yield
+          = render :partial => 'shared/javascript'

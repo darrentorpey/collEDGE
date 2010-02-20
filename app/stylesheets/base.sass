@@ -1,0 +1,55 @@
+@import compass/utilities.sass
+@import partials/transitions
+
+=group
+  \:after
+    :content "."
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+
+body
+  font-family: Arial
+
+=opacity(!opacity)
+  :opacity= !opacity
+  :-moz-opacity= !opacity
+  :-khtml-opacity= !opacity
+  :-ms-filter= "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + round(!opacity*100) + ")"
+  :filter= "alpha(opacity=" + round(!opacity*100) + ")"
+
+=border(!size, !color)
+  border= !size solid !color
+
+=rounded_border(!vertical, !horizontal, !size)
+  :-moz-border-radius-#{!vertical}#{!horizontal}= !size
+  :-webkit-border-#{!vertical}-#{!horizontal}-radius= !size
+
+=rounded_border_top(!size)
+  +rounded_border(top, left, !size)
+  +rounded_border(top, right, !size)
+
+=rounded_border_bottom(!size)
+  +rounded_border(bottom, left, !size)
+  +rounded_border(bottom, right, !size)
+
+=border_rounded_left(!size)
+  +rounded_border(top, left, !size)
+  +rounded_border(bottom, left, !size)
+
+=border_rounded_right(!size)
+  +rounded_border(top, right, !size)
+  +rounded_border(bottom, right, !size)
+
+=border_rounded(!size)
+  +rounded_border_top(!size)
+  +rounded_border_bottom(!size)
+
+!light_black = #222
+
+body
+  margin: 20px
+
+p
+  color= !light_black

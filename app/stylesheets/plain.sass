@@ -1,0 +1,104 @@
+@import base
+
+!top_bg_color = #75B270
+!bottom_bg_color = #AAF2A9
+
+!blue_dark  = #2f6f69
+!blue_light = #87b9b4
+
+!olive_dark = #555a46
+!olive_light = #c3d27d
+
+!cream_dark = #9b9673
+!cream_light = #f4f4de
+
+!orange_light = #D76431
+!orange_dark = #DC693C
+
+a
+  :color= blue - #111
+  :text-decoration none
+  &:hover
+    :color= blue + #333
+    :text-decoration underline
+
+!sidebar_core_clr = !top_bg_color + #004 - #222
+!sidebar_core_clr_2 = !sidebar_core_clr + #222
+.left_sidebar
+  .head
+    :background-color= !blue_dark
+    :padding 4px 8px
+    :border-bottom= 1px solid red
+      :color= blend(!sidebar_core_clr, !sidebar_core_clr_2)
+  .body
+    :background-color= !blue_light
+    :padding 4px 8px
+
+.basic_info_box    
+  :margin 10px 0px
+  h3
+    :background-color= !cream_dark
+    :font-weight bold
+    :text-align center
+    :padding 5px 10px
+    :color= !cream_light + #111
+    +border(1px, blend(!cream_dark, !cream_light))
+    +rounded_border_top(6px)
+    +border_blend(bottom, !cream_dark, !cream_light)
+  .lower
+    :background-color= !cream_light
+    :padding 5px 10px
+    :border= 2px solid !cream_light - #111
+      :top none
+    +rounded_border_bottom(4px)
+
+!tnm_bg_color = #F8EEDB
+ol#top_nav_menu
+  :color #111
+  +horizontal-list
+  :margin 5px 0px
+  :border= 1px solid !orange_dark
+  +border_rounded(8px)
+  :padding 0px 8px
+  :background-color= !orange_light
+  li
+    &::after
+      :content " \00BB"
+      :font-size 14px
+
+.properties_list
+  +horizontal-list
+  li
+    :background-color= !bottom_bg_color - #333
+    :margin= 5px 5px
+    :padding= 2px 10px
+    +border_rounded(6px)
+    &:hover
+      :background-color= !bottom_bg_color - #222
+      :cursor pointer
+
+.stupid_nav
+  +horizontal-list
+
+.event
+  .date
+    :text-align center
+    :margin  0px 0px 5px 0px
+    :padding 0px 0px 5px 0px
+    :border-bottom 1px solid black
+//    +opacity(0.9)
+
+.all_events
+  ul
+    +group
+  span
+    :float left
+    &.name
+      :width 14em
+    &.label
+      :width 6em
+      :color #111
+
+.inline_event_nav
+  +horizontal-list
+  :float left

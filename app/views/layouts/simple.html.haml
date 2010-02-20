@@ -1,0 +1,14 @@
+!!!
+%html{html_attrs}
+  %head
+    %meta{'http-equiv' => "Content-type", :content => "text/html; charset=utf-8"}
+    %title= page_title
+    = javascript_include_tag :defaults
+    = stylesheet_link_tag 'reset', :media => 'screen'
+    = stylesheet_link_tag 'base', :media => 'screen'
+    = stylesheet_link_tag 'core_layout', :media => 'screen'
+    = stylesheet_link_tag 'plain', :media => 'screen'
+    / = stylesheet_link_tag 'formtastic'
+    / = stylesheet_link_tag 'formtastic_changes'`
+  %body{:class => body_class}
+    = yield

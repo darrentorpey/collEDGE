@@ -1,0 +1,13 @@
+common:
+  project: CollEDGE
+  email_from: info@colledge.com
+  email_help: help@colledge.com
+
+production:
+  host_addr: http://www.colledge.com
+
+development:
+  host_addr: http://localhost:3000
+  
+test:
+  host_addr: http://localhost:3000

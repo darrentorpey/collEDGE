@@ -1,0 +1,27 @@
+@import blueprint/modules/grid.sass
+@import partials/forms
+@import base.sass
+@import partials/formtastic_base.sass
+
+!left_sidebar_color = #5E8C82
+
+form.square
+  +square_form
+  +float-form(600px,200px,400px)
+
+.container
+  .top
+    :line-height 60px
+    .title_box
+      +column(4)
+    .welcome_box
+    +clearfix
+    :margin-bottom 10px
+  .left_sidebar
+    +column(6)
+    :border= 2px solid !left_sidebar_color
+    +border_rounded(8px)
+  .outer_box
+    +clearfix
+  .main
+    +column(18)

@@ -1,0 +1,16 @@
+- page_title "Event"
+
+%div.basic_info_box.event{:style => 'width: 400px'}
+  %h3= h @event.name
+  .main
+    %p.date
+      =h @event.date.to_s(:real_short)
+    %ul.properties_list
+      - @event.properties.each do |property|
+        %li= property
+
+
+%ul.stupid_nav
+  %li= link_to "Edit", edit_event_path(@event)
+  %li= link_to "View All", events_path
+  %li= link_to "Destroy", @event, :confirm => 'Are you sure?', :method => :delete

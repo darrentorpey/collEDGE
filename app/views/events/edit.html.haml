@@ -1,0 +1,20 @@
+- page_title "Edit Event"
+
+- form_for OpenStruct.new(:name => 'bob'), :url => '', :html => { :class => 'square' } do |f|
+  = f.text_field :name
+
+- semantic_form_for OpenStruct.new(:name => 'bob'), :url => '', :html => { :class => 'square' } do |f|
+  = f.text_field :name
+  - f.inputs do
+    = f.input :title
+    = f.input :body
+  - f.inputs :name => "Advanced", :id => "advanced" do
+    = f.input :created_at
+    = f.input :user_id, :label => "Author"
+  - f.inputs "Extra" do
+    = f.input :update_at
+
+%p
+  = link_to "Show", event_path(@event)
+  |
+  = link_to "View All", events_path
