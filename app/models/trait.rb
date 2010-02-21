@@ -47,10 +47,6 @@ class Trait < TraitSet
     TRAITZ.collect(&:pick_one)
   end
 
-  def self.all_trait_names
-    TRAITZ.collect(&:names).flatten
-  end
-
   TRAITZ = [
     Trait(:romantic),
     Trait(:lazy),
@@ -58,4 +54,6 @@ class Trait < TraitSet
     Trait(:extroverted, :introverted),
     Trait(:ambitious, :cautious),
   ]
+
+  ALL_TRAIT_NAMES = TRAITZ.collect(&:names).flatten
 end

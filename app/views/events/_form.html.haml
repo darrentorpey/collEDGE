@@ -2,3 +2,6 @@
   = form.input :name, :label => 'Name'
   = form.input :properties_list, :label => 'Properties', :as => :text, :wrapper_html => { :class => 'prop_list' }
   = form.submit
+
+:javascript
+  $('#event_name').select();

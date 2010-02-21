@@ -1,8 +1,9 @@
 class UserExperiencesController < ApplicationController
   before_filter :get_user
 
+  helper :experience
+
   def user
-    @top_line = 'Experience something&hellip;'
   end
 
   private

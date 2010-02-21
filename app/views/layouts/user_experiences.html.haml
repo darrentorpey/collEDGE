@@ -1,0 +1,6 @@
+- set_top_line 'Experience something&hellip;'
+- include_css('experiences')
+- content_for :simple_content do
+  = yield(:experiences_content) || yield
+
+= render :file => 'layouts/simple'

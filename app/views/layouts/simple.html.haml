@@ -9,7 +9,7 @@
       - if @content_for_left_sidebar.present?
         %div.left_sidebar
           = yield :left_sidebar
-      %div.main
+      %div.main{:class => @content_for_left_sidebar.present? ? '' : 'no_sidebar' }
         = yield(:simple_content) || yield
         = render :partial => 'shared/javascript'
 

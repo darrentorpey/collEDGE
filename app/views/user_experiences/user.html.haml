@@ -15,7 +15,18 @@
 
 - page_title! "Launch Pad"
 
-%div.experiences_main{:style => 'width: 460px'}
-  %h3 Events
-  .lower
-    %p The body
+%div.experiences_main{:style => 'width: 860px'}
+  %h3 Stuff that's happened
+  %ul
+    - @user.event_experiences.each do |exp|
+      %li.event_row
+        .top
+          .name
+            = exp.event.name
+          .traits
+            = properties_list_sentence(exp)
+        .details
+          .choices
+            You chose to...
+          .results
+            As a result&hellip;

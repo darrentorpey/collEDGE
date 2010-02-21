@@ -1,19 +1,28 @@
+=plain_top
+  :background-color= !cream_dark
+  :font-weight bold
+  :text-align center
+  :padding 5px 10px
+  :color= !cream_light + #111
+  +border(1px, blend(!cream_dark, !cream_light))
+  +rounded_border_top(6px)
+  +border_blend(bottom, !cream_dark, !cream_light)
+
+!beige_box_text_light = !cream_light - #BBB
+!beige_box_text_dark = !cream_light - #CCC
+
+=beige_box
+  :background-color= !cream_light
+  :padding 5px 10px
+  :border= 2px solid !cream_light - #111
+
 =plain_info_box
   h3
-    :background-color= !cream_dark
-    :font-weight bold
-    :text-align center
-    :padding 5px 10px
-    :color= !cream_light + #111
-    +border(1px, blend(!cream_dark, !cream_light))
-    +rounded_border_top(6px)
-    +border_blend(bottom, !cream_dark, !cream_light)
+    +plain_top
   .lower
     +clearfix
-    :background-color= !cream_light
-    :padding 5px 10px
-    :border= 2px solid !cream_light - #111
-      :top none
+    +beige_box
+    :border-top none
     +rounded_border_bottom(4px)
 
 =basic_info_box

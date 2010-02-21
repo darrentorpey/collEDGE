@@ -10,7 +10,7 @@
           %ul.inline_event_nav
             %li= link_to 'Show', event
             %li= link_to 'Edit', edit_event_path(event)
-            %li= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+            %li= link_to 'destroy', event, :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
           %p.tags
             = event.properties_list_sorted
 

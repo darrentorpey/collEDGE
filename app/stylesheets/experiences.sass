@@ -1,0 +1,31 @@
+@import base
+@import partials/boxes
+
+.experiences_main
+  +plain_info_box
+  h3
+    +rounded_border_bottom(4px)
+  .event_row
+    :width 96%
+    :margin 5px auto
+    +beige_box
+    +border_rounded(4px)
+    +clearfix
+    :color= !beige_box_text_dark
+    .name
+      +float("left")
+      :width 400px
+    .traits
+      +float("left")
+      :width 400px
+      :font-size 14px
+      :color= !beige_box_text_light
+      +clearfix
+    .top
+      +clearfix
+    .details
+      :border-top= 1px "solid" !beige_box_text_light + #222
+      :padding-top 5px
+      :margin-top 5px
+      :clear left
+      :font-size 14px

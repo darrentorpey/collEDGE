@@ -5,13 +5,15 @@
 
 = standard_flash_box
 
-%div.basic_info_box.event.inliney{:style => 'width: 400px'}
+%div.basic_info_box.event.inliney{:style => 'width: 800px'}
   %h3= h @user.email
   .lower
     .inline_stats
       = pluralize(@user.event_experiences.count, 'experience')
     .actions
       = link_to 'experiences', user_experiences_path(@user)
+    .inline_stats.traits
+      = @user.trait_report
 
 %ul.stupid_nav
   %li= link_to "Edit", edit_user_path(@user)
