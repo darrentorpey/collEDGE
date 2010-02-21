@@ -71,8 +71,7 @@ form.square
 =admin_list_form
   ul
     +group
-  .inline_stats
-    +float("left")
+  +inline_em
   span
     :float left
     &.name
@@ -85,3 +84,13 @@ form.square
     :width 300px
     +float("left")
     :margin-left 20px
+
+=inline_em
+  .inline_stats
+    +float("left")
+  .actions
+    +float("left")
+    :margin-left 10px
+
+.inliney
+  +inline_em

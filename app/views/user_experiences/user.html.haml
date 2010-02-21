@@ -1,0 +1,21 @@
+- page_title "User"
+
+= standard_flash_box
+
+- content_for :left_sidebar do
+  .head
+    Time
+  .body
+    %ul.weeks
+      - (1..7).each do |i|
+        %li= link_to "Week #{i}", events_path
+      %hr
+      - (1..7).each do |i|
+        %li= link_to "Week #{i}", events_path
+
+- page_title! "Launch Pad"
+
+%div.experiences_main{:style => 'width: 460px'}
+  %h3 Events
+  .lower
+    %p The body

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   attr_protected          :password
   # attr_readonly           :key
 
+  bitmask :traits, :as => Trait.all_trait_names
+
   # Validations
   validates_format_of     :email, :with => /\w*@\w*.com/
   validates_length_of     :email, :in => 1..100
@@ -23,6 +25,20 @@ class User < ActiveRecord::Base
     3 => :user
   }.values
   easy_roles :roles_mask, :method => :bitmask
+
+  def self.generate_examples(num = 10)
+    (1..num).each do |i|
+      puts User.new(:email => "generated_#{i}@gmail.com", :traits => Trait.pick_trait_set.map(&:name)).short_report
+    end
+  end
+
+  def short_report
+    "#{email}\t\t- #{trait_report}"
+  end
+
+  def trait_report
+    traits.join(', ')
+  end
 
   private
 

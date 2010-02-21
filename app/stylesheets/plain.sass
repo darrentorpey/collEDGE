@@ -14,7 +14,7 @@ a
   .head
     :background-color= !blue_dark
     :padding 4px 8px
-    :border-bottom= 1px solid red
+    :border-bottom= 1px "solid" red
       :color= blend(!sidebar_core_clr, !sidebar_core_clr_2)
   .body
     :background-color= !blue_light
@@ -28,12 +28,12 @@ ol#top_nav_menu
   :color #111
   +horizontal-list
   :margin 5px 0px
-  :border= 1px solid !orange_dark
+  :border= 1px "solid" !orange_dark
   +border_rounded(8px)
   :padding 0px 8px
   :background-color= !orange_light
   li
-    &::after
+    &:after
       :content " \00BB"
       :font-size 14px
 
@@ -57,10 +57,13 @@ ol#top_nav_menu
     :text-align center
     :margin  0px 0px 5px 0px
     :padding 0px 0px 5px 0px
-    :border-bottom 1px solid black
+    :border-bottom 1px "solid" black
 //    +opacity(0.9)
 
 .inline_event_nav
   +horizontal-list
   :float left
   :font-size 14px
+
+.experiences_main
+  +plain_info_box

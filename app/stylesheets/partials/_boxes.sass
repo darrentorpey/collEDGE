@@ -1,5 +1,4 @@
-=basic_info_box
-  :margin 10px 0px
+=plain_info_box
   h3
     :background-color= !cream_dark
     :font-weight bold
@@ -16,3 +15,7 @@
     :border= 2px solid !cream_light - #111
       :top none
     +rounded_border_bottom(4px)
+
+=basic_info_box
+  :margin 10px 0px
+  +plain_info_box

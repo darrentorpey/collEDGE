@@ -17,7 +17,7 @@ class Event < ActiveRecord::Base
     6 => :enlightening,
     7 => :hard,
     8 => :emotionally_challenging,
-    9 => :one_off,
+    9 => :one_off
   }
 
   bitmask :properties, :as => PROPERTIES.values
