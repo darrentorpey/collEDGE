@@ -1,0 +1,30 @@
+<head>
+  <title><%= title_tag %></title>
+
+  <%= tag(:meta, :name => 'description', :content => strip_tags(meta_description)) unless @hide_meta_description %>
+  <meta name="keywords" content="<%= meta_tags %>" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+
+  <link href="/favicon.ico" rel="shortcut icon" />
+
+  <%= yield :first_stylesheets %>
+  <%= yield :stylesheets -%>
+  <%= yield :last_stylesheets -%>
+  <% if @content_for_stylesheets_ie6.present? -%>
+    <!--[if lte IE 6]>
+    <%= yield :stylesheets_ie6 %>
+    <![endif]-->
+  <% end -%>
+  <% if @content_for_stylesheets_ie7.present? -%>
+    <!--[if gte IE 7]>
+    <%= yield :stylesheets_ie7 %>
+    <![endif]-->
+  <% end -%>
+
+  <%= yield :javascript_includes_first -%>
+  <%= yield :javascript_includes -%>
+  <%= yield :javascript_includes_last -%>
+
+  <%= yield :head %>
+</head>

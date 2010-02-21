@@ -1,6 +1,13 @@
 - page_title "New Event"
 
-- semantic_form_for @event do |form|
-  = render :partial => 'form', :locals => { :form => form }
+.top_nav
+  = link_to 'All Events', events_path
 
-%p= link_to "Back to List", events_path
+= standard_flash_box
+
+- semantic_form_for @event, :html => { :class => 'square event_form', :id => 'create_event' } do |form|
+  %h3 New Event
+  .lower
+    = render :partial => 'form', :locals => { :form => form }
+
+= render :partial => 'shared/tag_field_helper'

@@ -1,0 +1,15 @@
+- page_title "User"
+
+.top_nav
+  = link_to 'All Users', users_path
+
+= standard_flash_box
+
+%div.basic_info_box.event{:style => 'width: 400px'}
+  %h3= h @user.email
+  .lower
+    = pluralize(@user.event_experiences.count, 'experience')
+
+%ul.stupid_nav
+  %li= link_to "Edit", edit_user_path(@user)
+  %li= link_to "Destroy", @user, :confirm => 'Are you sure?', :method => :delete

@@ -1,16 +1,17 @@
 - page_title "Events"
 
-%div.basic_info_box.all_events{:style => 'width: 500px'}
+%div.basic_info_box.all_events{:style => 'width: 800px'}
   %h3 All Events
-  .main
+  .lower
     %ul
       - for event in @events
         %li
-          %span.label= event.date.to_s(:real_short)
           %span.name= event.name.present? ? event.name : '&nbsp;'
           %ul.inline_event_nav
             %li= link_to 'Show', event
             %li= link_to 'Edit', edit_event_path(event)
             %li= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete
+          %p.tags
+            = event.properties_list_sorted
 
 %p= link_to "New Event", new_event_path

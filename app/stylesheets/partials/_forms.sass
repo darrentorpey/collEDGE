@@ -1,3 +1,7 @@
+@import base.sass
+@import partials/boxes.sass
+@import partials/formtastic_base.sass
+
 !light_black = #222
 !soft_black  = #444
 !softer_black  = #666
@@ -32,11 +36,13 @@
       !input_padding = 4px
       :height 21px
       :line-height 12px
-      :padding= 2px !input_padding
+      :padding= 0px !input_padding
       :float left
       :color #333
       :border= 1px solid !input_outline
       :width= !input_width
+    textarea
+      :padding-top 2px
     
     li.check_boxes fieldset ol li label
       :text-align left
@@ -48,3 +54,34 @@
   .commit
     input
       :height 32px
+
+
+form.square
+  +square_form
+  +float-form(400px,200px,200px)
+  textarea
+    :padding-top 2px
+
+=admin_form
+  input[type=submit]
+    :background-color= !default_button_bg_color
+    &:hover
+      :background-color= !default_button_bg_color + #080808
+
+=admin_list_form
+  ul
+    +group
+  .inline_stats
+    +float("left")
+  span
+    :float left
+    &.name
+      :width 14em
+    &.label
+      :width 6em
+      :color #111
+  p.tags
+    :font-size 14px
+    :width 300px
+    +float("left")
+    :margin-left 20px

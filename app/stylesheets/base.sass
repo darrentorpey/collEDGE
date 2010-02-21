@@ -46,7 +46,34 @@ body
   +rounded_border_top(!size)
   +rounded_border_bottom(!size)
 
+=before_raquo
+  &:before
+    :content "\00AB  "
+
+=after_raquo
+  &:after
+    :content " \00BB"
+
 !light_black = #222
+
+!top_bg_color = #75B270
+!bottom_bg_color = #AAF2A9
+
+!blue_dark  = #2f6f69
+!blue_light = #87b9b4
+
+!olive_dark = #555a46
+!olive_light = #c3d27d
+
+!cream_dark = #9b9673
+!cream_light = #f4f4de
+
+!orange_light = #D76431
+!orange_dark = #DC693C
+
+!link_blue_std = #3F7A9B
+
+!default_button_bg_color = #F0F0F0
 
 body
   margin: 20px

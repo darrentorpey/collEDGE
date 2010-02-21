@@ -1,0 +1,11 @@
+- page_title "New User"
+
+.top_nav
+  = link_to 'All Users', users_path
+
+= standard_flash_box
+
+- semantic_form_for @user, :html => { :class => 'square user_form', :id => 'create_event' } do |form|
+  %h3 New User
+  .lower
+    = render :partial => 'form', :locals => { :form => form }

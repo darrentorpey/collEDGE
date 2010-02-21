@@ -1,0 +1,20 @@
+- page_title "Users"
+
+- page_title "Events"
+
+%div.all_users
+  %h3 All Users
+  .lower
+    %ul
+      - for user in @users
+        %li
+          %span.email= user.email
+          .inline_stats
+            = pluralize(user.event_experiences.count, 'experience')
+          %ul.inline_event_nav
+            %li= link_to 'Show', user
+            %li= link_to 'Edit', edit_user_path(user)
+            %li= link_to 'destroy', user, :confirm => 'Are you sure?', :method => :delete, :class => 'delete'
+
+.bottom_nav
+  = link_to 'New User', new_user_path

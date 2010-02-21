@@ -1,0 +1,30 @@
+%head
+  %meta{'http-equiv' => "Content-type", :content => "text/html; charset=utf-8"}
+  %title= page_title
+  = javascript_include_tag ['jquery-1.4.2', 'dui/DUI.Class.js', 'jquery-dom', 'application', 'forms']
+  = stylesheet_link_tag 'reset', :media => 'screen'
+  = stylesheet_link_tag 'base', :media => 'screen'
+  = stylesheet_link_tag 'core_layout', :media => 'screen'
+  = stylesheet_link_tag 'plain', :media => 'screen'
+
+  = yield :first_stylesheets
+  = yield :stylesheets
+  = yield :last_stylesheets
+  - if @content_for_stylesheets_ie6.present?
+    :plain
+      <!--[if lte IE 6]>
+    = yield :stylesheets_ie6
+    :plain
+      <![endif]-->
+  - if @content_for_stylesheets_ie7.present?
+    :plain
+      <!--[if gte IE 7]>
+    = yield :stylesheets_ie7
+    :plain
+      <![endif]-->
+
+  = yield :javascript_includes_first
+  = yield :javascript_includes
+  = yield :javascript_includes_last
+
+  = yield :head

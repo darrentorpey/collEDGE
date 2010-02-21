@@ -1,20 +1,26 @@
 class Event < ActiveRecord::Base
+
+  has_many :event_experiences
+  has_many :users, :through => :event_experiences
+
   attr_accessible :date, :name, :properties_list
 
   # Other ideas
   #=> boundary_buster...
   #=> metaphysical_exploration...
-  bitmask :properties, :as => {
+  PROPERTIES = {
     1 => :romantic,
     2 => :fun,
     3 => :exciting,
-    4 => :envigorating,
+    4 => :invigorating,
     5 => :eye_opening,
     6 => :enlightening,
     7 => :hard,
     8 => :emotionally_challenging,
     9 => :one_off,
-    }.values
+  }
+
+  bitmask :properties, :as => PROPERTIES.values
 
   # bitmask :properties, :as => {
   #   1 => :snowball_fight,
@@ -30,7 +36,12 @@ class Event < ActiveRecord::Base
   before_save :decode_properties
 
   def properties_list
-    properties.join(' ')
+    properties_list_sorted
+    # properties.join(' ')
+  end
+
+  def properties_list_sorted
+    properties.map(&:to_s).sort.join(', ')
   end
 
   private

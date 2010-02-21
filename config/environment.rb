@@ -31,7 +31,6 @@ Rails::Initializer.run do |config|
   #            :version => '>= 2.3.1.1'
   config.gem 'rack',
              :version => '>= 1.0.1'
-  config.gem 'lipsiadmin', :version => '<= 5.1.1'
 
   # Authorization
   config.gem 'cancan'

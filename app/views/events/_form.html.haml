@@ -1,6 +1,4 @@
 - form.inputs do
   = form.input :name, :label => 'Name'
-  / = form.input :properties, :label => 'Properties'
-  = form.input :properties_list, :label => 'Properties'
-  = form.input :date, :label => 'Date'
-  = form.buttons
+  = form.input :properties_list, :label => 'Properties', :as => :text, :wrapper_html => { :class => 'prop_list' }
+  = form.submit

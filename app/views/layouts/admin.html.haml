@@ -1,0 +1,6 @@
+- set_top_line 'Build it!'
+- include_css('admin')
+- content_for :simple_content do
+  = yield(:admin_content) || yield
+
+= render :file => 'layouts/simple'

@@ -1,14 +1,17 @@
 class User < ActiveRecord::Base
 
+  has_many :event_experiences
+  has_many :events, :through => :event_experiences
+
   # Mass-assignment protection
   attr_protected          :password
-  attr_readonly           :key
+  # attr_readonly           :key
 
   # Validations
   validates_format_of     :email, :with => /\w*@\w*.com/
   validates_length_of     :email, :in => 1..100
   validates_uniqueness_of :email, :case_sensitive => false
-  validates_length_of     :key, :is => 20, :message => "key must be 20 characters long"
+  # validates_length_of     :key, :is => 20, :message => "key must be 20 characters long"
 
   # AR lifecyle callbacks
   before_create :generate_key

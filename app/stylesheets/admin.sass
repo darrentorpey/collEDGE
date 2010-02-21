@@ -1,0 +1,80 @@
+@import base.sass
+@import compass/utilities.sass
+@import partials/links.sass
+@import partials/boxes.sass
+@import partials/forms.sass
+
+.help
+  +float("left")
+  :margin-left 20px
+  :margin-top 50px
+  #val_field
+    :width 400px
+    a
+      :margin 5px
+      +box_link
+      :color= !link_blue_std - #111
+      :background-color= !link_blue_std + #666
+      +border_rounded(8px)
+      :font-size 12px
+      +float("left")
+      &:hover
+        :background-color= !link_blue_std + #777
+
+.top_nav
+  a
+    +before_raquo
+    :line-height 12px
+    :font-size 14px
+    :padding-left 2px
+
+.bottom_nav
+  :clear both
+  a
+    +after_raquo
+
+a.delete
+  :font-size 10px
+  :color= #00f - #444
+//  +before_raquo
+//  +after_raquo
+
+.all_events
+  +admin_list_form
+
+.all_users
+  +basic_info_box
+  +admin_list_form
+  .inline_stats
+    :margin-left 10px
+  .inline_event_nav
+    :margin-left 10px
+  .email
+    :width 260px
+  .inline_stats
+    :width 100px
+
+
+=simple_admin_form
+  +admin_form
+  +basic_info_box
+  :width 500px
+  +float("left")
+  +clearfix
+  .lower  
+    :padding 10px
+  .prop_list
+    textarea
+      :width 260px
+  input[type=submit]
+    :margin-left 122px
+    :width auto
+    :padding 0px 8px
+    :cursor pointer
+    :height 24px
+
+form.event_form
+  +simple_admin_form
+
+form.user_form
+  +simple_admin_form
