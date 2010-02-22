@@ -3,7 +3,10 @@ class Event < ActiveRecord::Base
   has_many :event_experiences
   has_many :users, :through => :event_experiences
 
-  attr_accessible :date, :name, :properties_list
+  has_many :event_options
+  def options; event_options; end
+
+  accepts_nested_attributes_for :event_options, :reject_if => lambda { |a| a[:text].blank? }
 
   PROPERTIES = {
     1  => :romantic,

@@ -5,12 +5,19 @@
 
 = standard_flash_box
 
-%div.basic_info_box.event{:style => 'width: 400px'}
+%div.event_view{:style => 'width: 800px'}
   %h3= h @event.name
   .lower
     %ul.properties_list
       - @event.properties.each do |property|
         %li= property
+    %ul.options
+      - @event.options.each do |option|
+        %li.option
+          .text
+            = option.text
+          .result
+            = option.result
 
 
 %ul.stupid_nav

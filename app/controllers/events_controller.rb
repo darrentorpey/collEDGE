@@ -25,6 +25,7 @@ class EventsController < ApplicationController
   
   def edit
     @event = Event.find(params[:id])
+    3.times { @event.options.build }
   end
   
   def update

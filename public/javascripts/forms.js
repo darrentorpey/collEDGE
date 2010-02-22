@@ -8,12 +8,12 @@ var TagField = new DUI.Class({
     this.values = values;
     this.values_field = values_field;
     var me = this;
-    $.each(this.values, function(index, value) {
-      var link = $.create('a', { 'class':'my_link', 'href':'#' }, [value]);
-      $(link).click(function() {
+    jQuery.each(this.values, function(index, value) {
+      var link = jQuery.create('a', { 'class':'my_link', 'href':'#' }, [value]);
+      jQuery(link).click(function() {
         me.toggle_tag(this);
       });
-      $(link).appendTo(values_field);
+      jQuery(link).appendTo(values_field);
     });
   },
   toggle_tag: function(text) {
@@ -36,7 +36,7 @@ var TagField = new DUI.Class({
   },
   remove_tag: function(text) {
     var tags = this.field.val().split(this.separator);
-    tags = $(tags).not(function(t) { return tags[t] == text; });
+    tags = jQuery(tags).not(function(t) { return tags[t] == text; });
     this.field.val(tags.toArray().join(this.separator));
   }
 });

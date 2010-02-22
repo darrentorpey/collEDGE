@@ -1,6 +1,11 @@
 - form.inputs do
   = form.input :name, :label => 'Name'
   = form.input :properties_list, :label => 'Properties', :as => :text, :wrapper_html => { :class => 'prop_list' }
+  %h4 Options
+  - form.semantic_fields_for :event_options do |event_option|
+    %hr
+    = event_option.input :text, :name => "Option", :wrapper_html => { :class => 'event_option_text' }
+    = event_option.input :result, :name => "Option", :as => :string, :wrapper_html => { :class => 'event_option_result' }
   = form.submit
 
 :javascript

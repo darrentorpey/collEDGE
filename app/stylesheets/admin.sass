@@ -9,7 +9,7 @@
   :margin-left 20px
   :margin-top 50px
   #val_field
-    :width 400px
+    :width 300px
     a
       :margin 5px
       +box_link
@@ -80,9 +80,48 @@ a.delete
 
 form.event_form
   +simple_admin_form
+  :width 600px
+  h4
+    :color= !cream_dark
+    :padding-bottom 0px
+    :padding-left 10px
+  fieldset
+    :width auto
+  .event_option_text
+    input
+      :width 430px
+  .event_option_result
+    input
+      :width 430px
+    textarea
+      :width 400px
+      :height 60px
+  hr
+    :margin 5px 10px
+    :color= !cream_light
+    :width 550px
+  #event_name_input
+    input
+      :width 430px
 
 form.user_form
   +simple_admin_form
 
 .traits
   :margin-left 10px
+
+.event_view
+  +basic_info_box
+  .options
+    :margin-top 5px
+    :padding-top 5px
+    :border-top= 1px solid !cream_dark
+    .option
+      :margin-top 5px
+      :padding-left 5px
+      :border-left= 1px solid !cream_dark
+      :font-size 14px
+      .text
+        :font-weight bold
+      .result
+        :text-indent 10px

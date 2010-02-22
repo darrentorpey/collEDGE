@@ -4,12 +4,22 @@
 
 - content_for :left_sidebar do
   .head
-    Time
+    Weeks
   .body
     %ul.weeks
+      %h4 A-Term
       - (1..7).each do |i|
         %li= link_to "Week #{i}", events_path
       %hr
+      %h4 B-Term
+      - (1..7).each do |i|
+        %li= link_to "Week #{i}", events_path
+      %hr
+      %h4 C-Term
+      - (1..7).each do |i|
+        %li= link_to "Week #{i}", events_path
+      %hr
+      %h4 D-Term
       - (1..7).each do |i|
         %li= link_to "Week #{i}", events_path
 
@@ -27,6 +37,8 @@
             = properties_list_sentence(exp)
         .details
           .choices
-            You chose to...
+            You chose to&hellip;
+            %span= exp.choice.option.text if exp.choice
           .results
             As a result&hellip;
+            %span= exp.choice.result if exp.choice
